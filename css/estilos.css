@@ -1,0 +1,14 @@
+.div-carrusel{
+    max-width: 60%;
+    margin-top: 50px;
+}
+
+.div-card{
+    margin-top: 30px;
+    max-width: 70%;
+}
+
+body{
+    background-image: url("../img/fondo.jpg");
+    background-size: cover;
+}
