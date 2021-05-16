@@ -130,4 +130,15 @@ function fn_indicadoresEconomicos(){
     })
 }
 
+function fn_clima(){
+    $.getJSON("https://api.gael.cloud/general/public/clima",function(data){
+        var respuesta = data;
+        for(x of respuesta){
+            $("#lst_climas")
+            .append("<li class='list-group-item'><div class='row'><div class='col'>"+x.Estacion+"</div><div class='col'>"+x.Temp+"°</div><div class='col'>"+x.Estado+"</div></div></li>");
+        }
+    })
+}
+
 fn_indicadoresEconomicos();
+fn_clima();
