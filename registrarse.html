@@ -30,32 +30,33 @@
                 <form id="formregistro">
                     <div class="form-group row justify-content-start">
                         <label class="col-3">Rut: </label>
-                        <input type="text" class="form-control col-8" id="txt_rut">
+                        <input type="text" class="form-control col-8" id="txt_rut" required>
                     </div>
                     <div class="form-group row justify-content-start">
                         <label class="col-3">Nombre: </label>
-                        <input type="text" class="form-control col-8" id="txt_nombre">
+                        <input type="text" class="form-control col-8" id="txt_nombre" required>
                     </div>
                     <div class="form-group row justify-content-start">
                         <label class="col-3">Apellido Paterno: </label>
-                        <input type="text" class="form-control col-8" id="txt_appaterno">
+                        <input type="text" class="form-control col-8" id="txt_appaterno" required>
                     </div>
                     <div class="form-group row justify-content-start">
                         <label class="col-3">Apellido Materno: </label>
-                        <input type="text" class="form-control col-8" id="txt_apmaterno">
+                        <input type="text" class="form-control col-8" id="txt_apmaterno" required>
                     </div>
                     <div class="form-group row justify-content-start">
                         <label class="col-3">Correo Electrónico: </label>
-                        <input type="text" class="form-control col-8" id="txt_email">
+                        <input type="text" class="form-control col-8" id="txt_email" required>
                     </div>
                     <div class="form-group row justify-content-start">
                         <label class="col-3"> Tipo de Cuenta:</label>
                         <select class="form-control col-3" id="cmb_tcuenta">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option selected>-- SELECCIONE --</option>
+                            <option>Cuenta Corriente</option>
+                            <option>Cuenta Vista</option>
+                            <option>Cuenta de Ahorro</option>
+                            <option>Linea de Crédito</option>
+                            <option>Chequera Electrónica</option>
                         </select>
                     </div>
                     <div class="row justify-content-center">
@@ -63,6 +64,10 @@
                     </div>
                   </form>
             </div>
+        </div>
+    </div>
+    <div class="div-card container">
+        <div class="alert" id="alerta" role="alert">
         </div>
     </div>
 </body>
