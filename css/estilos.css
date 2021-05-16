@@ -12,3 +12,8 @@ body{
     background-image: url("../img/fondo.jpg");
     background-size: cover;
 }
+
+.div-form{
+    margin-top: 30px;
+    max-width: 80%;
+}
