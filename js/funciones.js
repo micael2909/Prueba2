@@ -117,3 +117,17 @@ $("#btn_registro").click(function(){
 $("#btn_limpiar").click(function(){
     $("#formregistro").trigger("reset");
 })
+
+
+function fn_indicadoresEconomicos(){
+    $.getJSON('https://mindicador.cl/api',function(data){
+        var respuesta = data;
+        $("#lst_indicadores").append("<li class='list-group-item'><div class='row'><div class='col'>"+respuesta.dolar.nombre+"</div> : <div class='col'>$"+respuesta.dolar.valor+"</div></div></li>");
+        $("#lst_indicadores").append("<li class='list-group-item'><div class='row'><div class='col'>"+respuesta.euro.nombre+"</div> : <div class='col'>$"+respuesta.euro.valor+"</div></div></li>");
+        $("#lst_indicadores").append("<li class='list-group-item'><div class='row'><div class='col'>"+respuesta.uf.nombre+"</div> : <div class='col'>$"+respuesta.uf.valor+"</div></div></li>");
+        $("#lst_indicadores").append("<li class='list-group-item'><div class='row'><div class='col'>"+respuesta.utm.nombre+"</div> : <div class='col'>$"+respuesta.utm.valor+"</div></div></li>");
+        $("#lst_indicadores").append("<li class='list-group-item'><div class='row'><div class='col'>"+respuesta.bitcoin.nombre+"</div> : <div class='col'>USD$"+respuesta.bitcoin.valor+"</div></div></li>");
+    })
+}
+
+fn_indicadoresEconomicos();
