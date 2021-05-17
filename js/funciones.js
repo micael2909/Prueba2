@@ -1,6 +1,9 @@
+/*Iniciamos limpiando todas las etiquetas de la página*/
 fn_limpiarEtiqueta();
 
+/*Comenzamos con el icono de cargando oculto*/
 var loading = $('#sp_cargando').hide();
+/*el icono de cargando estará visible mientras se ejecute la consulta a la API*/
 $(document)
   .ajaxStart(function () {
     loading.show();
@@ -9,6 +12,7 @@ $(document)
     loading.hide();
 });
 
+/*borro el contenido de la etiqueta de alerta y borro las clases de color verde o rojo*/
 function fn_limpiarEtiqueta(){
     $("#alerta").removeClass("alert-success");
     $("#alerta").removeClass("alert-danger");
@@ -16,18 +20,21 @@ function fn_limpiarEtiqueta(){
     $("#alerta").html("");
 }
 
-
+/*funcion para validar los datos del formulario*/
 $("#btn_registro").click(function(){
+    /*iniciamos limpiando la etiqueta*/
     fn_limpiarEtiqueta();
+    /*guardamos en variables los campos que llena el usuario*/
     var rut = $("#txt_rut").val();
     var nombre = $("#txt_nombre").val();
     var apellidop = $("#txt_appaterno").val();
     var apellidom = $("#txt_apmaterno").val();
     var correo = $("#txt_email").val();
     var tipocuenta = $("#cmb_tcuenta option:selected").text();
+    /*creamos un contador para los errores y un txt para anotar los errores*/
     var countErrores = 0;
     var txtErrores = "";
-
+    /*separamos la validacion por si el campo rut esta vacio o no */
     if(rut == ""){
         countErrores++;
         txtErrores += "Debe ingresar un Rut <br>";
@@ -50,7 +57,7 @@ $("#btn_registro").click(function(){
             var formatoCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             if(!formatoCorreo.test(correo)){
                 countErrores++;
-                txtErrores += "Correo inválido"
+                txtErrores += "Correo inválido <br>"
             }
         }
         if(tipocuenta == "-- SELECCIONE --"){
@@ -116,6 +123,7 @@ $("#btn_registro").click(function(){
 
 $("#btn_limpiar").click(function(){
     $("#formregistro").trigger("reset");
+    fn_limpiarEtiqueta();
 })
 
 
@@ -134,6 +142,7 @@ function fn_clima(){
     $.getJSON("https://api.gael.cloud/general/public/clima",function(data){
         var respuesta = data;
         for(x of respuesta){
+
             $("#lst_climas")
             .append("<li class='list-group-item'><div class='row'><div class='col'>"+x.Estacion+"</div><div class='col'>"+x.Temp+"°</div><div class='col'>"+x.Estado+"</div></div></li>");
         }
