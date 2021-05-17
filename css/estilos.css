@@ -1,18 +1,19 @@
+/*div para el carrusel de imagenes del index*/
 .div-carrusel{
     max-width: 60%;
     margin-top: 50px;
 }
-
+/*div para las card*/
 .div-card{
     margin-top: 30px;
     max-width: 70%;
 }
-
+/*diseño para el fondo de la pagina web*/
 body{
     background-image: url("../img/fondo.jpg");
     background-size: cover;
 }
-
+/*div para el formulario*/
 .div-form{
     margin-top: 30px;
     max-width: 80%;
