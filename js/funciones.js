@@ -101,7 +101,7 @@ $("#btn_registro").click(function(){
                 var formatoCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
                 if(!formatoCorreo.test(correo)){
                     countErrores++;
-                    txtErrores += "Correo inválido";
+                    txtErrores += "Correo inválido<br>";
                 }
             }
 
